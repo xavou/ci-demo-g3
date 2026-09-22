@@ -10,7 +10,7 @@ class DuckFine:
         self.total_owed = 0.0
 
     def charge(self, days_late, deluxe=False):
-        if days_late < 0:
+        if days_late > 0:
             raise ValueError("days_late must not be negative")
         chargeable = max(0, days_late - self.GRACE_DAYS)
         fee = chargeable * self.DAILY_FEE
