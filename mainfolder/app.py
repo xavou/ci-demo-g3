@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
 
-from .duckfine import DuckFine
+try:
+    from .duckfine import DuckFine
+except ImportError:
+    from duckfine import DuckFine
 
 
 app = Flask(__name__)

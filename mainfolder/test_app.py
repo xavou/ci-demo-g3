@@ -1,6 +1,9 @@
 import unittest
 
-from mainfolder.app import app
+if __package__:
+    from .app import app
+else:
+    from app import app
 
 
 class TestFineEndpoint(unittest.TestCase):
